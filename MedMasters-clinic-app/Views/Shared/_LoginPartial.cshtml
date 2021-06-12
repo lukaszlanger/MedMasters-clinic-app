@@ -1,0 +1,31 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<ul class="navbar-nav d-flex flex-column flex-lg-row justify-content-lg-end align-items-center">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <li class="nav-item  call-btn button gradient-bg mt-3 mt-md-0">
+            <a class="d-flex justify-content-center align-items-center nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage"><img src="~/images/awatar.png" /> @User.Identity.Name
+            </a>
+        </li>
+        <li class="nav-item">
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                <button type="submit" class="nav-link btn btn-link text-dark">Wyloguj</button>
+            </form>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item  call-btn button gradient-bg mt-3 mt-md-0">
+            <a class="d-flex justify-content-center align-items-center nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">
+                <img src="~/images/rejestracja.png" /> Zarejestruj
+            </a>
+        </li>
+        <li class="nav-item  call-btn button gradient-bg mt-3 mt-md-0">
+            <a class="d-flex justify-content-center align-items-center nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">
+                <img src="~/images/logowanie.png" /> Zaloguj
+            </a>
+        </li>
+    }
+</ul>

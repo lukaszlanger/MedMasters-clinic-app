@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Klinika.Models.WorkingDays>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeStart)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeEnd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Worker)
+            </th>
+            <th>Edytuj</th>
+            <th>Informacje</th>
+            <th>Usuń</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeStart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeEnd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Worker.IdWorker)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdWorkingDay">
+                    <img src="~/images/edytuj2.png" />
+                </a>
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.IdWorkingDay">
+                    <img src="~/images/info.png" />
+                </a>
+            </td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.IdWorkingDay">
+                    <img src="~/images/usun.png" />
+                </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

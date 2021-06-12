@@ -1,0 +1,125 @@
+﻿
+@{
+    ViewData["Title"] = "Menu";
+    ViewData["Icon"] = "images/szukaj.png";
+}
+
+<div class="menu-name">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Menu</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-4">
+            <a asp-controller="Visits" asp-action="Index">
+                <div class="our-departments-cont button gradient-bg">
+                    <header class="entry-header d-flex flex-wrap align-items-center">
+                        <img src="images/kalendarz.png" alt="">
+                        <h3>Wizyty</h3>
+                    </header>
+
+                    <div class="entry-content">
+                        <p>Przegląd wizyt pacjentów. Dodaj, edytuj lub usuń wizytę</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <a asp-controller="Patients" asp-action="Index">
+                <div class="our-departments-cont button gradient-bg">
+                    <header class="entry-header d-flex flex-wrap align-items-center">
+                        <img src="images/pacjenci.png" alt="">
+                        <h3>Pacjenci</h3>
+                    </header>
+
+                    <div class="entry-content">
+                        <p>Przegląd oraz zarządzanie listą pacjentów</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <a asp-controller="Workers" asp-action="Index">
+                <div class="our-departments-cont button gradient-bg">
+                    <header class="entry-header d-flex flex-wrap align-items-center">
+                        <img src="images/workers.png" alt="">
+                        <h3>Pracownicy</h3>
+                    </header>
+
+                    <div class="entry-content">
+                        <p>Pracownicy kliniki oraz ich dane logowania i role</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <a asp-controller="Medicines" asp-action="Index">
+                <div class="our-departments-cont button gradient-bg">
+                    <header class="entry-header d-flex flex-wrap align-items-center">
+                        <img src="images/leki.png" alt="">
+                        <h3>Leki</h3>
+                    </header>
+
+                    <div class="entry-content">
+                        <p>Przegląd magazynu leków. Zarządzaj listą leków</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <a asp-controller="DoctorSpecializations" asp-action="Index">
+                <div class="our-departments-cont button gradient-bg">
+                    <header class="entry-header d-flex flex-wrap align-items-center">
+                        <img src="images/lekarz.png" alt="">
+                        <h3>Specjaliści</h3>
+                    </header>
+
+                    <div class="entry-content">
+                        <p>Przegląd listy lekarzy w klinice. Zarządzaj listą lekarzy</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <a asp-controller="MedicalSpecializations" asp-action="Index">
+                <div class="our-departments-cont button gradient-bg">
+                    <header class="entry-header d-flex flex-wrap align-items-center">
+                        <img src="images/specjalizacje.png" alt="">
+                        <h3>Specjalizacje</h3>
+                    </header>
+
+                    <div class="entry-content">
+                        <p>Specjalizacje w naszej klinice</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <a asp-controller="Home" asp-action="Index">
+                <div class="our-departments-cont button gradient-bg">
+                    <header class="entry-header d-flex flex-wrap align-items-center">
+                        <img src="images/dom.png" alt="">
+                        <h3>Powrót</h3>
+                    </header>
+
+                    <div class="entry-content">
+                        <p>Potrzebujesz informacji? Wróc na stronę główną</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

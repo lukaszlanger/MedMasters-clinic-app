@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Klinika.Models.Medicines>
+
+@{
+    ViewData["Title"] = "Leki";
+}
+
+<h1>Leki</h1>
+
+<div class="container">
+    <div class="row">
+        <p>
+            <a asp-action="Create">Dodaj nowy lek</a>
+        </p>
+        <table class="table table-sm table-responsive">
+            <thead>
+                <tr>
+                    <th>
+                        Nazwa Leku
+                    </th>
+                    <th>
+                        Dawkowanie
+                    </th>
+                    <th>
+                        Data wydania
+                    </th>
+                    <th>
+                        Data ważności
+                    </th>
+                    <th>
+                        Wizyta
+                    </th>
+                    <th>Edytuj</th>
+                    <th>Informacje</th>
+                    <th>Usuń</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MedicineName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Dosage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateOfIssue)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ExpirationDay)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Visit.IdVisit)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.IdMedicine">
+                            <img src="~/images/edytuj2.png" />
+                        </a>
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.IdMedicine">
+                            <img src="~/images/info.png" />
+                        </a>
+                    </td>
+                    <td>
+                        <a asp-action="Delete" asp-route-id="@item.IdMedicine">
+                            <img src="~/images/usun.png" />
+                        </a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,113 @@
+﻿@model IEnumerable<Klinika.Models.Patients>
+
+@{
+    ViewData["Title"] = "Pacjenci";
+    ViewData["Icon"] = "images/pacjenci.png";
+}
+
+<h1>Pacjenci</h1>
+
+<div class="container">
+    <div class="row">
+        <p>
+            <a asp-action="Create">Dodaj nowego pacjenta</a>
+        </p>
+        <table class="table table-sm table-responsive">
+            <thead>
+                <tr>
+                    <th>Pesel</th>
+                    <th>Nazwisko</th>
+                    <th>Nazwisko panieńskie</th>
+                    <th>Imię</th>
+                    <th>Drugie imię</th>
+                    <th>Data urodzenia</th>
+                    <th>Data śmierci</th>
+                    <th>Miejsce urodzenia</th>
+                    <th>Miasto</th>
+                    <th>Ulica</th>
+                    <th>Numer domu</th>
+                    <th>Numer mieszkania</th>
+                    <th>Numer telefonu</th>
+                    <th>E-mail</th>
+                    <th>Konto aktywne</th>
+                    <th>Edytuj</th>
+                    <th>Informacje</th>
+                    <th>Usuń</th>
+                    <th>Raport</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pesel)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Surname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MaidenName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Forename)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SecondForename)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateOfBirth)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateOfDeath)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CityOfBirth)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.City)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Street)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BuildingNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FlatNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PhoneNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Active)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Pesel">
+                            <img src="~/images/edytuj2.png" />
+                        </a>
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.Pesel">
+                            <img src="~/images/info.png" />
+                        </a>
+                    </td>
+                    <td>
+                        <a asp-action="Delete" asp-route-id="@item.Pesel">
+                            <img src="~/images/usun.png" />
+                        </a>
+                    </td>
+                    <td>
+                        <a asp-controller="Raport" asp-action="Index" asp-route-id="@item.Pesel">
+                            <img src="~/images/raport.png" />
+                        </a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

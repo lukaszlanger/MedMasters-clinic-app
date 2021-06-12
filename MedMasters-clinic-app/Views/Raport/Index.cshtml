@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Klinika.ModelView.Raport>
+@{
+    ViewData["Title"] = "Raport";
+}
+
+<h1>Raport</h1>
+<table border="1">
+    <tr>
+        <th>Pacjent (PESEL)</th>
+        <th>Wizyta (ID)</th>
+        <th>Data wizyty</th>
+        <th>Opis</th>
+        <th>Lekarz (ID)</th>
+        <th>Nazwa Leku</th>
+        <th>Dawkowanie</th>
+        <th>Lek wydany na wizycie (ID)</th>
+    </tr>
+    <tr>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.Patients.Pesel</td>
+            <td>@item.Visits.IdVisit</td>
+            <td>@item.Visits.Date</td>
+            <td>@item.Visits.VisitsDescription</td>
+            <td>@item.Visits.DoctorId</td>
+            <td>@item.Medicines.MedicineName</td>
+            <td>@item.Medicines.Dosage</td>
+            <td>@item.Medicines.VisitId</td>
+        </tr>
+        }
+    </tr>
+    </table>
+
+

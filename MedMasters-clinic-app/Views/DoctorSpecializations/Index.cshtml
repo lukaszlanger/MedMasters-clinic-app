@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Klinika.Models.DoctorSpecializations>
+
+@{
+    ViewData["Title"] = "Specjaliści";
+}
+
+<h1>Specjaliści</h1>
+
+<p>
+    <a asp-action="Create">Dodaj nowego specjalistę</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Lekarz
+            </th>
+            <th>
+                Specjalizacja
+            </th>
+            <th>Edytuj</th>
+            <th>Informacje</th>
+            <th>Usuń</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Doctor.IdWorker)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Specialization.IdSpecialization)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdDoctorSpecialization">
+                    <img src="~/images/edytuj2.png" />
+                </a>
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.IdDoctorSpecialization">
+                    <img src="~/images/info.png" />
+                </a>
+            </td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.IdDoctorSpecialization">
+                    <img src="~/images/usun.png" />
+                </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

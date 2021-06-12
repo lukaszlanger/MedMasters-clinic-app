@@ -1,0 +1,137 @@
+﻿@{
+    ViewData["Title"] = "Strona główna";
+    ViewData["Icon"] = "images/serce.png";
+    Layout = null;
+}
+
+<html lang="en">
+<head>
+    <title>MEDMasters - @ViewData["Title"]</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Swiper CSS -->
+    <link href="~/css/swiper.min.css" rel="stylesheet" />
+    <!-- Styles -->
+    <link href="~/style.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href=@ViewData["Icon"]>
+</head>
+<body class="single-page">
+    <header class="site-header">
+        <div class="nav-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
+                        <div class="site-branding d-flex align-items-center">
+                            <a class="d-block" asp-controller="Home" asp-action="Index" rel="home"><img class="d-block" src="~/images/logo.png" alt="logo"></a>
+                        </div><!-- .site-branding -->
+
+                        <nav class="site-navigation d-flex justify-content-end align-items-center">
+                            <partial name="_LoginPartial" />
+                        </nav><!-- .site-navigation -->
+
+                        <div class="hamburger-menu d-lg-none">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div><!-- .hamburger-menu -->
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .nav-bar -->
+        <img class="header-img" src="images/contact-bg.png" alt="">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Strona główna</h1>
+                </div>
+            </div>
+        </div>
+    </header><!-- .site-header -->
+    
+    <div class="homepage-boxes">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="opening-hours">
+                        <h2 class="d-flex align-items-center">Godziny otwarcia</h2>
+
+                        <ul class="p-0 m-0">
+                            <li>Poniedziałek - Czwartek <span>8.00 - 19.00</span></li>
+                            <li>Piątek <span>8.00 - 18.30</span></li>
+                            <li>Sobota <span>9.30 - 17.00</span></li>
+                            <li>Niedziela <span>9.30 - 15.00</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3 mt-5 mt-md-0">
+                    <div class="emergency-box">
+                        <h2 class="d-flex align-items-center">Kontakt</h2>
+
+                        <div class="call-btn button gradient-bg">
+                            <a class="d-flex justify-content-center align-items-center" href="#"><img src="images/telefon.png"> +48 500 300 666</a>
+                        </div>
+
+                        <p>Aby umówić się na wizytę prosimy o kontakt telefoniczny w godzinach funkcjonowania kliniki. Możliwa jest rejestracja telefoniczna.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-5 mt-5 mt-lg-0">
+                    <div class="emergency-box">
+                        <h2 class="d-flex align-items-center">Opinie</h2>
+
+                        <p>"Klinika bardzo pozytywniem nie zaskoczyła! Profesjonalna obsługa, profesjonalni lekarze! Zdecydowanie polecam!!!" ~ Karol</p>
+                        <p>"Byłam już w wielu klinikach, ale tylko MEDMasters zdołało mi pomóc! Lekarz Tomasz jest cudotwórcą < 3" ~ Grażyna</p>
+                        <p>"Profesjonalna klinika!" ~ Barbara</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-widgets">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-6">
+                        <div class="foot-about">
+                            <h2><img src="~/images/logo.png" alt=""></h2>
+
+                            <p>Profesjonalna klinika MEDMasters prowadząca pełen szereg usług w dziedzinach takich jak: chirurgia ogólna, chirurgia plastyczna, dermatologia oraz dietetyka.</p>
+
+                            <p class="copyright">
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;
+                                <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p>
+                        </div><!-- .foot-about -->
+                    </div><!-- .col -->
+
+                    <div class="col-12 col-md-6 col-lg-6 mt-5 mt-md-0">
+                        <div class="foot-links">
+                            <h2>Autorzy projektu</h2>
+                            <ul class="p-0 m-0">
+                                <li><a href="https://github.com/lukaszlanger">Łukasz Langer</a></li>
+                                <li><a href="">Tomasz Błaszczyk</a></li>
+                                <li><a href="">Katarzyna Baluch</a></li>
+                                <li><a href="">Karolina Wiercioch</a></li>
+                            </ul>
+                        </div>
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .footer-widgets -->
+    </footer><!-- .site-footer -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>

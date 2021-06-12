@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MEDMasters - @ViewData["Title"]</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Swiper CSS -->
+    <link href="~/css/swiper.min.css" rel="stylesheet" />
+    <!-- Styles -->
+    <link href="~/style.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href=@ViewData["Icon"]>
+</head>
+<body class="single-page">
+    <header class="site-header-menu">
+        <div class="nav-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
+                        <div class="site-branding d-flex align-items-center">
+                            <a class="d-block" asp-controller="Menu" asp-action="Index" rel="home"><img class="d-block" src="~/images/logo.png" alt="logo"></a>
+                        </div><!-- .site-branding -->
+
+                        <nav class="site-navigation d-flex justify-content-end align-items-center">
+                            <partial name="_LoginPartial" />
+                        </nav><!-- .site-navigation -->
+
+                        <div class="hamburger-menu d-lg-none">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div><!-- .hamburger-menu -->
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .nav-bar -->
+    </header><!-- .site-header -->
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-widgets">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-6">
+                        <div class="foot-about">
+                            <h2><img src="~/images/logo.png" alt=""></h2>
+
+                            <p>Profesjonalna klinika MEDMasters prowadząca pełen szereg usług w dziedzinach takich jak: chirurgia ogólna, chirurgia plastyczna, dermatologia oraz dietetyka.</p>
+
+                            <p class="copyright">
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;
+                                <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p>
+                        </div><!-- .foot-about -->
+                    </div><!-- .col -->
+
+                    <div class="col-12 col-md-6 col-lg-6 mt-5 mt-md-0">
+                        <div class="foot-links">
+                            <h2>Autorzy projektu</h2>
+                            <ul class="p-0 m-0">
+                                <li><a href="https://github.com/lukaszlanger">Łukasz Langer</a></li>
+                                <li><a href="">Tomasz Błaszczyk</a></li>
+                                <li><a href="">Katarzyna Baluch</a></li>
+                                <li><a href="">Karolina Wiercioch</a></li>
+                            </ul>
+                        </div>
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .footer-widgets -->
+    </footer><!-- .site-footer -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+

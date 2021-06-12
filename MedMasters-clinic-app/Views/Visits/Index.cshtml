@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Klinika.Models.Visits>
+
+@{
+    ViewData["Title"] = "Wizyty";
+}
+
+<h1>Wizyty</h1>
+
+<p>
+    <a asp-action="Create">Dodaj nową wizytę</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.IdVisit)
+            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.VisitsDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Compleated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Doctor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Patient)
+            </th>
+            <th>Edytuj</th>
+            <th>Informacje</th>
+            <th>Usuń</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdVisit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VisitsDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Compleated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Doctor.IdWorker)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Patient.Pesel)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdVisit">
+                    <img src="~/images/edytuj2.png" />
+                </a>
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.IdVisit">
+                    <img src="~/images/info.png" />
+                </a>
+            </td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.IdVisit">
+                    <img src="~/images/usun.png" />
+                </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
